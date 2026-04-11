@@ -20,7 +20,7 @@ class Locators:
     HEADER_LINKEDIN = (By.CSS_SELECTOR, '[href="https://in.linkedin.com/in/rahul-arora-0490b751"]')
     HEADER_GOOGLE = (By.CSS_SELECTOR, '[href="https://plus.google.com/u/0/+RamanAhujatheseleniumguru"]')
     HEADER_YOUTUBE = (By.CSS_SELECTOR, '[href="https://www.youtube.com/c/seleniumappiumtutorialtraining"]')
-    FOOTER_PART = (By.XPATH, '//div[@data-id="695441a0"]')
+    FOOTER_PART = (By.XPATH, '//section[@data-id="4cfa36e1"]')
     FOOTER_ADDRESS = (By.XPATH, '(//span[@class="elementor-icon-list-text"])[25]')
     FOOTER_TEL_1 = (By.XPATH, '(//span[@class="elementor-icon-list-text"])[26]')
     FOOTER_TEL_2 = (By.XPATH, '(//span[@class="elementor-icon-list-text"])[27]')
