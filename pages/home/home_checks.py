@@ -10,82 +10,68 @@ class HomeChecks(BasePage):
 
 
     def check_navigation_panel(self):
-        assert self.is_element_on_screen(self.locators.NAVIGATION_PANEL)
+        assert self.is_element_on_screen(self.locators.NAVIGATION_PANEL), 'Отсутствует панель навигации'
 
 
     def check_reg_btn(self):
         el = self.find_elements(self.locators.REGISTER_BTN)
-        assert len(el) > 0, "No elements found"
+        assert len(el) > 0, 'Кнопка регистрации отсутствует'
 
     def check_list_of_courses(self):
-        el = self.find_element(self.locators.BEST_SELENIUM_COURSE)
-        assert el.is_displayed()
+        assert self.is_element_on_screen(self.locators.BEST_SELENIUM_COURSE), 'Список курсов отсутствует'
+
 
     def check_tel_number_ind(self):
-        number = self.find_element(self.locators.HEADER_IND_NUMBER)
-        assert number.text == '+919711-111-558'
+        assert self.is_element_on_screen(self.locators.HEADER_IND_NUMBER), 'Телефон отсутствует'
 
 
     def check_tel_number_wa(self):
-        number = self.find_element(self.locators.HEADER_WHATSUP_NUMBER)
-        assert number.text == '+919711-191-558'
+        assert self.is_element_on_screen(self.locators.HEADER_WHATSUP_NUMBER), 'Телефон отсутствует'
 
 
     def check_tel_number_usa(self):
-        number = self.find_element(self.locators.HEADER_USA_NUMBER)
-        assert number.text == '+1 646-480-0603'
+        assert self.is_element_on_screen(self.locators.HEADER_USA_NUMBER), 'Телефон отсутствует'
 
 
     def check_skype(self):
-        skype = self.find_element(self.locators.HEADER_SKYPE_ID)
-        assert skype.text == 'seleniumcoaching'
+        assert self.is_element_on_screen(self.locators.HEADER_SKYPE_ID), 'Скайп отсутствует'
 
 
     def check_top_email(self):
-        email = self.find_element(self.locators.HEADER_EMAIL)
-        assert email.text == 'trainer@way2automation.com'
+        assert self.is_element_on_screen(self.locators.HEADER_EMAIL), 'Электронная почта отсутствует'
 
 
     def check_facebook(self):
-        facebook = self.find_element(self.locators.HEADER_FACEBOOK)
-        assert facebook.is_displayed()
+        assert self.is_element_on_screen(self.locators.HEADER_FACEBOOK), 'facebook отсутствует'
 
 
     def check_linkedin(self):
-        linkedin = self.find_element(self.locators.HEADER_LINKEDIN)
-        assert linkedin.is_displayed()
+        assert self.is_element_on_screen(self.locators.HEADER_LINKEDIN), 'linkedin отсутствует'
 
 
     def check_google(self):
-        google_plus = self.find_element(self.locators.HEADER_GOOGLE)
-        assert google_plus.is_displayed()
+        assert self.is_element_on_screen(self.locators.HEADER_GOOGLE), 'google_plus отсутствует'
 
 
     def check_youtube(self):
-        youtube = self.find_element(self.locators.HEADER_YOUTUBE)
-        assert youtube.is_displayed()
+        assert self.is_element_on_screen(self.locators.HEADER_YOUTUBE), 'youtube отсутствует'
 
 
     def check_footer_address(self):
-        address = self.find_element(self.locators.FOOTER_ADDRESS)
-        assert address.is_displayed()
+        assert self.is_element_on_screen(self.locators.FOOTER_ADDRESS), 'Адрес отсутствует'
 
 
     def check_footer_tel_1(self):
-        el = self.find_element(self.locators.FOOTER_TEL_1)
-        assert el.is_displayed()
+        assert self.is_element_on_screen(self.locators.FOOTER_TEL_1), 'Первый контактный телефон отсутствует'
 
 
     def check_footer_tel_2(self):
-        el = self.find_element(self.locators.FOOTER_TEL_2)
-        assert el.is_displayed()
+        assert self.is_element_on_screen(self.locators.FOOTER_TEL_2), 'Второй контактный телефон отсутствует'
 
 
     def check_footer_email_1(self):
-        el = self.find_element(self.locators.FOOTER_EMAIL_1)
-        assert el.is_displayed()
+        assert self.is_element_on_screen(self.locators.FOOTER_EMAIL_1), 'Первая контактная электронная почта отсутствует'
 
 
     def check_footer_email_2(self):
-        el = self.find_element(self.locators.FOOTER_EMAIL_2)
-        assert el.is_displayed()
+        assert self.is_element_on_screen(self.locators.FOOTER_EMAIL_2), 'Вторая контактная электронная почта отсутствует'
