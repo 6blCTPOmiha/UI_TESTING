@@ -11,5 +11,5 @@ class MembershipChecks(BasePage):
 
     def check_title(self):
         title = self.find_element(self.locators.LMC_TITLE)
-        assert title.text == "LIFETIME MEMBERSHIP CLUB"
+        assert title.text == "LIFETIME MEMBERSHIP CLUB", 'Отсутствует заголовок'
 
