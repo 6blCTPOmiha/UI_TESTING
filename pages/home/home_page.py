@@ -13,19 +13,19 @@ class HomePage(BasePage):
         self.open(self.url)
 
     def tp_down(self):
-        self.scroll_to_the_bottom()
+        self.scroll_to_the_bottom(self.locators.FOOTER_PART)
 
     def scroll_a_little_down(self):
         self.scroll_down(700)
 
     def wait_for_ad_load(self):
-        self.wait_for_specific_element(self.locators.CLOSE_AD_BTN)
+        self.find_element(self.locators.CLOSE_AD_BTN)
 
     def wait_for_page_load(self):
-        self.wait_for_specific_element(self.locators.HOME_BG_IMG_ON_TOP)
+        self.find_element(self.locators.HOME_BG_IMG_ON_TOP)
 
     def wait_for_header_load(self):
-        self.wait_for_specific_element(self.locators.HEADER_PART)
+        self.find_element(self.locators.HEADER_PART)
 
     def wait_for_navig_load(self):
         self.wait_for_element_visible_for_user(self.locators.NAVIGATION_PANEL)
@@ -37,7 +37,7 @@ class HomePage(BasePage):
         self.wait_for_element_visible_for_user(self.locators.LIFETIME_MEMBERSHIP)
 
     def wait_for_footer_load(self):
-        self.is_element_visible(self.locators.FOOTER_PART)
+        self.wait_for_element_visible_for_user(self.locators.FOOTER_PART)
 
     def click_close_ad_btn(self):
         self.click_element_by_locator(self.locators.CLOSE_AD_BTN)
