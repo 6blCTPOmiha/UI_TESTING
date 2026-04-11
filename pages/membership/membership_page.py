@@ -10,4 +10,4 @@ class MembershipPage(BasePage):
         self.locators = Locators()
 
     def wait_for_page_load(self):
-        self.wait_for_specific_element(self.locators.MEMBER_BG_IMG_ON_TOP)
+        self.find_element(self.locators.MEMBER_BG_IMG_ON_TOP)
