@@ -9,17 +9,25 @@ class BasePage:
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
 
+    def open(self, url):
+        self.driver.get(url)
 
     def find_element(self, locator, timeout=10):
-        return self.wait_for_specific_element(locator, timeout)
-
+        try:
+            element = WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(locator))
+            return element
+        except TimeoutException:
+            raise TimeoutException(f"Элемент '{locator[1]}' не найден за {timeout} секунд")
 
     def find_elements(self, locator, timeout=10):
         wait = WebDriverWait(self.driver, timeout)
         return wait.until(EC.presence_of_all_elements_located(locator))
 
-    def scroll_to_the_bottom(self):
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    def scroll_to_the_bottom(self, locator):
+        while True:
+            self.scroll_down(1000)
+            if self.is_element_on_screen(locator, timeout=10) is True:
+                break
 
 
     def scroll_down(self, length):
@@ -43,36 +51,9 @@ class BasePage:
         return result
 
 
-    def is_element_visible(self, locator, timeout=15):
-        """Проверить видимость элемента"""
-        try:
-            wait = WebDriverWait(self.driver, timeout)
-            wait.until(EC.visibility_of_element_located(locator))
-            return True
-        except TimeoutException:
-            return False
-
-
-    def wait_for_specific_element(self, locator, timeout=15):
-        """
-        Ожидание конкретного элемента на странице
-        """
-        try:
-            element = WebDriverWait(self.driver, timeout).until(
-                EC.presence_of_element_located(locator)
-            )
-            return element
-        except TimeoutException:
-            raise TimeoutException(f"Элемент '{locator[1]}' не найден за {timeout} секунд")
-
-
     def wait_for_element_visible_for_user(self, locator, timeout=15):
+        """Ожидание видимости элемента по пикселям на мониторе"""
         wait = WebDriverWait(self.driver, timeout)
         element = wait.until(EC.visibility_of_element_located(locator))
-        wait.until(lambda driver: driver.execute_script("var r = arguments[0].getBoundingClientRect(); return r.top < window.innerHeight && r.bottom >= 0;",
-                                                        element))
+        wait.until(lambda driver: driver.execute_script("var r = arguments[0].getBoundingClientRect(); return r.top < window.innerHeight && r.bottom >= 0;", element))
         return element
-
-
-    def open(self, url):
-        self.driver.get(url)
