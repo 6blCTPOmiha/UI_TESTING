@@ -7,7 +7,6 @@ class MembershipPage(BasePage):
         super().__init__(driver)
 
         self.url = 'https://www.way2automation.com/lifetime-membership-club/'
-        self.locators = Locators()
 
     def wait_for_page_load(self):
-        self.find_element(self.locators.MEMBER_BG_IMG_ON_TOP)
+        self.find_element(Locators.MEMBER_BG_IMG_ON_TOP)
