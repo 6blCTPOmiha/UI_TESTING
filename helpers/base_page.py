@@ -19,16 +19,14 @@ class BasePage:
         except TimeoutException:
             raise TimeoutException(f"Элемент '{locator[1]}' не найден за {timeout} секунд")
 
-    def find_elements(self, locator, timeout=10):
-        wait = WebDriverWait(self.driver, timeout)
-        return wait.until(EC.presence_of_all_elements_located(locator))
+    def find_elements(self, locator):
+        return self.wait.until(EC.presence_of_all_elements_located(locator))
 
     def scroll_to_the_bottom(self, locator):
         while True:
             self.scroll_down(1000)
-            if self.is_element_on_screen(locator, timeout=10) is True:
+            if self.is_element_on_screen(locator, timeout=10):
                 break
-
 
     def scroll_down(self, length):
         ActionChains(self.driver).scroll_by_amount(0, length).perform()
