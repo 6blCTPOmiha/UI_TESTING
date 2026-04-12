@@ -1,3 +1,4 @@
+import allure
 from helpers.base_page import BasePage
 from data.locators import Locators
 
@@ -8,5 +9,6 @@ class MembershipPage(BasePage):
 
         self.url = 'https://www.way2automation.com/lifetime-membership-club/'
 
+    @allure.step('Открыть страницу подписки')
     def wait_for_page_load(self):
         self.find_element(Locators.MEMBER_BG_IMG_ON_TOP)
