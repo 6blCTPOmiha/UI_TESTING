@@ -1,0 +1,30 @@
+from selenium.webdriver.common.by import By
+
+
+class Locators:
+    CLOSE_AD_BTN = (By.CSS_SELECTOR, '[class="eicon-close"]')
+    HOME_BG_IMG_ON_TOP = (By.XPATH, '//section[@data-id="53d02b5a"]')
+    MEMBER_BG_IMG_ON_TOP = (By.CSS_SELECTOR, '[data-id="c4bff92"]')
+    NAVIGATION_PANEL = (By.XPATH, '(//div[@data-section="section-primary-header-builder"])[1]')
+    ALL_COURSES = (By.CSS_SELECTOR, '[id="menu-item-27580"]')
+    LIFETIME_MEMBERSHIP = (By.CSS_SELECTOR, '[id="menu-item-27581"]')
+    REGISTER_BTN = (By.XPATH, '//div[@class="swiper-slide-contents"]//a[@href="https://www.way2automation.com/lifetime-membership-club/"]')
+    BEST_SELENIUM_COURSE = (By.XPATH, '//section[@data-id="1e537621"]')
+    HEADER_PART = (By.CSS_SELECTOR, '[class="site-above-header-wrap ast-builder-grid-row-container site-header-focus-item ast-container"]')
+    HEADER_IND_NUMBER = (By.XPATH, '//span[contains(text(), "+919711-111-558")]')
+    HEADER_WHATSUP_NUMBER = (By.XPATH, '//span[contains(text(), "+919711-191-558")]')
+    HEADER_USA_NUMBER = (By.XPATH, '//span[contains(text(), "+1 646-480-0603")]')
+    HEADER_SKYPE_ID = (By.XPATH, '(//span[contains(text(), "seleniumcoaching")])[1]')
+    HEADER_EMAIL = (By.XPATH, '(//span[contains(text(), "trainer@way2automation.com")])[1]')
+    HEADER_FACEBOOK = (By.CSS_SELECTOR, '[href="https://www.facebook.com/way2automation"]')
+    HEADER_LINKEDIN = (By.CSS_SELECTOR, '[href="https://in.linkedin.com/in/rahul-arora-0490b751"]')
+    HEADER_GOOGLE = (By.CSS_SELECTOR, '[href="https://plus.google.com/u/0/+RamanAhujatheseleniumguru"]')
+    HEADER_YOUTUBE = (By.CSS_SELECTOR, '[href="https://www.youtube.com/c/seleniumappiumtutorialtraining"]')
+    FOOTER_PART = (By.XPATH, '//section[@data-id="4cfa36e1"]')
+    FOOTER_ADDRESS = (By.XPATH, '(//span[@class="elementor-icon-list-text"])[25]')
+    FOOTER_TEL_1 = (By.XPATH, '(//span[@class="elementor-icon-list-text"])[26]')
+    FOOTER_TEL_2 = (By.XPATH, '(//span[@class="elementor-icon-list-text"])[27]')
+    FOOTER_EMAIL_1 = (By.XPATH, '(//span[@class="elementor-icon-list-text"])[28]')
+    FOOTER_EMAIL_2 = (By.XPATH, '(//span[@class="elementor-icon-list-text"])[29]')
+
+    LMC_TITLE = (By.XPATH, '//h1[contains(text(), "LIFETIME MEMBERSHIP CLUB")]')
