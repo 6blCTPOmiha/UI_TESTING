@@ -55,3 +55,8 @@ class BasePage:
         element = wait.until(EC.visibility_of_element_located(locator))
         wait.until(lambda driver: driver.execute_script("var r = arguments[0].getBoundingClientRect(); return r.top < window.innerHeight && r.bottom >= 0;", element))
         return element
+
+    def wait_until_btn_is_clickable(self, locator, timeout=5):
+        wait = WebDriverWait(self.driver, timeout)
+        btn = wait.until(EC.element_to_be_clickable(locator))
+        return btn
