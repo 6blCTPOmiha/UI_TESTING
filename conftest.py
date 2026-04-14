@@ -6,6 +6,8 @@ from pages.home.home_checks import HomeChecks
 from pages.home.home_page import HomePage
 from pages.membership.membership_checks import MembershipChecks
 from pages.membership.membership_page import MembershipPage
+from pages.login.login_checks import LoginChecks
+from pages.login.login_page import LoginPage
 
 
 @pytest.fixture
@@ -35,3 +37,13 @@ def membership_page(driver):
 @pytest.fixture
 def membership_checks(driver):
     return MembershipChecks(driver)
+
+
+@pytest.fixture
+def login_page(driver):
+    return LoginPage(driver)
+
+
+@pytest.fixture
+def login_checks(driver):
+    return LoginChecks(driver)
