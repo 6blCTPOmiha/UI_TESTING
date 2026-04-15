@@ -1,18 +1,20 @@
 import allure
 from helpers.base_page import BasePage
 from data.locators import Locators
+from config import Config, Endpoints
 
 
 class HomePage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-        self.url = 'https://www.way2automation.com'
+        self.url = Config.BASE_URL + Endpoints.HOME
+
 
     @allure.step('Открыть главную страницу')
     def open_page(self):
         self.open(self.url)
-        self.find_element(Locators.HOME_BG_IMG_ON_TOP)
+        self.wait_for_url(Config.BASE_URL)
 
     @allure.step('Прокрутить вниз до футера')
     def scroll_to_the_footer(self):
