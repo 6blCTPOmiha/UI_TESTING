@@ -1,19 +1,22 @@
 import allure
 from helpers.base_page import BasePage
 from data.locators import Locators
+from config import Config, Endpoints
 
 
 class LoginPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
-
-        self.url = 'https://www.way2automation.com/angularjs-protractor/registeration/#/login'
+        self.url = Config.BASE_URL + Endpoints.LOGIN
 
 
     @allure.step('Открыть главную страницу')
     def open_page(self):
         self.open(self.url)
-        self.find_element(Locators.TEXT_ALERT)
+        self.wait_for_paige_load()
+
+    def wait_for_paige_load(self):
+        self.wait_for_url('login')
 
     @allure.step("Ввод username'а")
     def input_username(self, username):
