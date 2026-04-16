@@ -28,3 +28,11 @@ class Locators:
     FOOTER_EMAIL_2 = (By.XPATH, '(//span[@class="elementor-icon-list-text"])[29]')
 
     LMC_TITLE = (By.XPATH, '//h1[contains(text(), "LIFETIME MEMBERSHIP CLUB")]')
+
+    TEXT_ALERT = (By.CSS_SELECTOR, '[class="alert alert-info ng-scope"]')
+    USERNAME_FIELD = (By.CSS_SELECTOR, '[id="username"]')
+    PASSWORD_FIELD = (By.CSS_SELECTOR, '[id="password"]')
+    USERNAME_DESCRIPTION_FIELD = (By.CSS_SELECTOR, '[id="formly_1_input_username_0"]')
+    LOGIN_BTN = (By.CSS_SELECTOR, '[class="btn btn-danger"]')
+    SUCCESS_PARAM = (By.CSS_SELECTOR, '[class="btn btn-success"]')
+    TEXT_HOME = (By.XPATH, '//h1[contains(text(), "Home")]')

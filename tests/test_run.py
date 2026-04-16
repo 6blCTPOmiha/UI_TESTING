@@ -1,4 +1,5 @@
 import allure
+import pytest
 
 
 @allure.epic("UI")
@@ -7,6 +8,7 @@ class TestRun:
     @allure.feature("Home page")
     @allure.story("Page Loading")
     @allure.severity(allure.severity_level.CRITICAL)
+    @pytest.mark.home
     def test_page_loading(self, home_page, home_checks):
         home_page.open_page()
         home_checks.check_header()
@@ -19,6 +21,7 @@ class TestRun:
     @allure.feature("Home page")
     @allure.story("Header's checks")
     @allure.severity(allure.severity_level.NORMAL)
+    @pytest.mark.home
     def test_header(self, home_page, home_checks):
         home_page.open_page()
         home_checks.check_tel_number_ind()
@@ -34,6 +37,7 @@ class TestRun:
     @allure.feature("Home page")
     @allure.story("Footer's checks")
     @allure.severity(allure.severity_level.NORMAL)
+    @pytest.mark.home
     def test_footer(self, home_page, home_checks):
         home_page.open_page()
         home_page.scroll_to_the_footer()
@@ -46,6 +50,7 @@ class TestRun:
     @allure.feature("Home page")
     @allure.story("Navigation panel move")
     @allure.severity(allure.severity_level.MINOR)
+    @pytest.mark.home
     def test_navigation_menu_on_scroll(self, home_page, home_checks):
         home_page.open_page()
         home_checks.check_navigation_panel()
@@ -57,6 +62,7 @@ class TestRun:
     @allure.feature("Home page & Membership page")
     @allure.story("Dropdown list & title text")
     @allure.severity(allure.severity_level.NORMAL)
+    @pytest.mark.home
     def test_membership_page(self, home_page, membership_page, membership_checks):
         home_page.open_page()
         home_page.click_on_all_courses()
