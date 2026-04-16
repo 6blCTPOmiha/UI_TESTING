@@ -59,9 +59,21 @@ class BasePage:
         return element
 
     def wait_until_btn_is_clickable(self, locator, timeout=Config.SHORT_TIMEOUT) -> WebElement:
+        """Ожидание кликабельности кнопки"""
+        try:
+            wait = WebDriverWait(self.driver, timeout)
+            btn = wait.until(EC.element_to_be_clickable(locator))
+            return btn
+        except TimeoutException:
+            raise TimeoutException(f"Кнопка '{locator[1]}' не стала кликабельной за {timeout} секунд")
+
+    def is_btn_not_clickable(self, locator, timeout=Config.SHORT_TIMEOUT) -> bool:
         wait = WebDriverWait(self.driver, timeout)
-        btn = wait.until(EC.element_to_be_clickable(locator))
-        return btn
+        btn = wait.until(EC.element_attribute_to_include(locator, 'disabled'))
+        if btn is not None:
+            return True
+        else:
+            return False
 
     def wait_for_url(self, url_part, timeout=Config.TIMEOUT) -> None:
         WebDriverWait(self.driver, timeout).until(EC.url_contains(url_part))
