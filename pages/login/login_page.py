@@ -10,11 +10,12 @@ class LoginPage(BasePage):
         self.url = Config.BASE_URL + Endpoints.LOGIN
 
 
-    @allure.step('Открыть главную страницу')
+    @allure.step('Открытие страницы')
     def open_page(self):
         self.open(self.url)
         self.wait_for_paige_load()
 
+    @allure.step('Ожидание загрузки страницы')
     def wait_for_paige_load(self):
         self.wait_for_url('login')
 
@@ -37,3 +38,8 @@ class LoginPage(BasePage):
     def click_login_btn(self):
         btn = self.wait_until_btn_is_clickable(Locators.LOGIN_BTN)
         btn.click()
+
+    @allure.step("Нажатие на гипертекст logout")
+    def click_logout_hypertext(self):
+        hypertext = self.find_element(Locators.LOGOUT_HYPERTEXT)
+        hypertext.click()
