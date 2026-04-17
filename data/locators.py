@@ -36,3 +36,6 @@ class Locators:
     LOGIN_BTN = (By.CSS_SELECTOR, '[class="btn btn-danger"]')
     SUCCESS_PARAM = (By.CSS_SELECTOR, '[class="btn btn-success"]')
     TEXT_HOME = (By.XPATH, '//h1[contains(text(), "Home")]')
+    SUCCESS_LOGIN_TEXT = (By.XPATH, """//p[contains(text(), "You're logged in!!")]""")
+    ALERT_LOGIN_ERROR = (By.CSS_SELECTOR, '[ng-if="Auth.error"]')
+    LOGOUT_HYPERTEXT = (By.XPATH, """//a[contains(text(), "Logout")]""")
