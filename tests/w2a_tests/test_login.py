@@ -1,10 +1,10 @@
 import allure
 import pytest
-from data.constants import Constants
+from data.w2a_data.constants import Constants
 
 
 @allure.epic("UI")
-class TestRun:
+class TestLogin:
 
     @allure.feature("Login page")
     @allure.story("Login test")

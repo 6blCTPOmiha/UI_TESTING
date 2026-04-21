@@ -1,7 +1,7 @@
 import allure
 from helpers.base_page import BasePage
-from data.locators import Locators
-from config import Config, Endpoints
+from data.w2a_data.locators import Locators
+from config.w2a_config import Config, Endpoints
 
 
 class MembershipPage(BasePage):
