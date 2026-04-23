@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 @pytest.fixture
 def driver():
     options = Options()
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Remote("http://localhost:4444", options=options)
     driver.maximize_window()
     yield driver
     driver.quit()
