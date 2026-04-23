@@ -39,3 +39,7 @@ class HomePage(BasePage):
     def load_cookies_from_file(self):
         self.load_cookies(TextData.COOKIES_PATH)
         self.refresh_page()
+
+    @allure.step('Убрать фокус')
+    def remove_focus(self):
+        self.driver.execute_script("document.activeElement.blur();")

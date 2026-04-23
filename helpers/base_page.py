@@ -1,6 +1,5 @@
 import json
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
@@ -80,13 +79,13 @@ class BasePage:
     def wait_for_url(self, url_part, timeout=Base_Config.TIMEOUT) -> None:
         WebDriverWait(self.driver, timeout).until(EC.url_contains(url_part))
 
-    def save_cookies(self, path):
+    def save_cookies(self, path) -> None:
         cookies = self.driver.get_cookies()
 
         with open(path, "w") as file:
             json.dump(cookies, file)
 
-    def load_cookies(self, path):
+    def load_cookies(self, path) -> None:
         with open(path, "r") as file:
             cookies = json.load(file)
 
@@ -98,5 +97,11 @@ class BasePage:
                 }
                 self.driver.add_cookie(cookie_dict)
 
-    def refresh_page(self):
+    def refresh_page(self) -> None:
         self.driver.refresh()
+
+    def return_focus_part(self) -> str:
+        return self.driver.execute_script("return document.activeElement.tagName;")
+
+    def is_page_has_scroll(self) -> bool:
+        return self.driver.execute_script("return document.body.scrollHeight > window.innerHeight;")
