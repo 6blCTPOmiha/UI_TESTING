@@ -12,4 +12,3 @@ class MembershipChecks(BasePage):
         self.find_element(Locators.MEMBER_BG_IMG_ON_TOP)
         title = self.find_element(Locators.LMC_TITLE)
         assert title.text == "LIFETIME MEMBERSHIP CLUB", 'Отсутствует заголовок'
-
