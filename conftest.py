@@ -14,6 +14,12 @@ def driver():
     driver.quit()
 
 
+def pytest_addoption(parser):
+    parser.addoption("--browser", action="store", default="chrome")
+    parser.addoption("--remote", action="store_true")
+    parser.addoption("--grid-url", action="store", default="http://localhost:4444/wd/hub")
+
+
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):
     outcome = yield
