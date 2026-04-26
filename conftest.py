@@ -8,10 +8,16 @@ from selenium.webdriver.chrome.options import Options
 @pytest.fixture
 def driver():
     options = Options()
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Remote("http://localhost:4444", options=options)
     driver.maximize_window()
     yield driver
     driver.quit()
+
+
+def pytest_addoption(parser):
+    parser.addoption("--browser", action="store", default="chrome")
+    parser.addoption("--remote", action="store_true")
+    parser.addoption("--grid-url", action="store", default="http://localhost:4444/wd/hub")
 
 
 @pytest.hookimpl(hookwrapper=True)

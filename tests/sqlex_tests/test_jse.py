@@ -25,4 +25,3 @@ class TestCookies:
     def test_page_has_scroll(self, home_page, home_checks):
         home_page.open_page()
         home_checks.check_page_has_scroll()
-
