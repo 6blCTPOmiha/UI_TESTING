@@ -39,7 +39,4 @@ class DriverFactory:
         else:
             raise ValueError("Unsupported browser for Grid")
 
-        return webdriver.Remote(
-            command_executor=grid_url,
-            options=options
-        )
+        return webdriver.Remote(command_executor=grid_url, options=options)
