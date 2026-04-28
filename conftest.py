@@ -1,14 +1,16 @@
 import pytest
 import allure
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from factory.driver_factory import DriverFactory
+from config.base_config import Config
 
 
 
 @pytest.fixture
-def driver():
-    options = Options()
-    driver = webdriver.Remote("http://localhost:4444", options=options)
+def driver(request):
+    browser = request.config.getoption("--browser")
+    remote = request.config.getoption("--remote")
+    grid_url = request.config.getoption("--grid-url")
+    driver = DriverFactory.create_driver(browser=browser, remote=remote, grid_url=grid_url)
     driver.maximize_window()
     yield driver
     driver.quit()
@@ -17,7 +19,7 @@ def driver():
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome")
     parser.addoption("--remote", action="store_true")
-    parser.addoption("--grid-url", action="store", default="http://localhost:4444/wd/hub")
+    parser.addoption("--grid-url", action="store", default=Config.GRID_URL)
 
 
 @pytest.hookimpl(hookwrapper=True)
