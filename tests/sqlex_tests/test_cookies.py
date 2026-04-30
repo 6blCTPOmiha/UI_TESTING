@@ -10,6 +10,7 @@ class TestCookies:
     @allure.story("Login test")
     @allure.title("Success logining in system")
     @allure.severity(allure.severity_level.CRITICAL)
+    @pytest.mark.sqlex
     @pytest.mark.cookies
     def test_success_log_in(self, home_page, home_checks):
         home_page.open_page()
@@ -23,6 +24,7 @@ class TestCookies:
     @allure.story("Login test")
     @allure.title("Logining in system and save cookies")
     @allure.severity(allure.severity_level.NORMAL)
+    @pytest.mark.sqlex
     @pytest.mark.cookies
     def test_log_in_and_save_cookies(self, home_page, home_checks):
         home_page.open_page()
@@ -37,6 +39,7 @@ class TestCookies:
     @allure.story("Login test")
     @allure.title("Logining in system using cookies")
     @allure.severity(allure.severity_level.NORMAL)
+    @pytest.mark.sqlex
     @pytest.mark.cookies
     def test_log_in_using_cookies(self, home_page, home_checks):
         home_page.open_page()

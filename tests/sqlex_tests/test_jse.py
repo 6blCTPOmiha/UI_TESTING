@@ -9,6 +9,7 @@ class TestCookies:
     @allure.story("JavaScriptExecutor test")
     @allure.title("Change focus")
     @allure.severity(allure.severity_level.NORMAL)
+    @pytest.mark.sqlex
     @pytest.mark.jse
     def test_success_log_in(self, home_page, home_checks):
         home_page.open_page()
@@ -21,6 +22,7 @@ class TestCookies:
     @allure.story("JavaScriptExecutor test")
     @allure.title("Page has scroll")
     @allure.severity(allure.severity_level.NORMAL)
+    @pytest.mark.sqlex
     @pytest.mark.jse
     def test_page_has_scroll(self, home_page, home_checks):
         home_page.open_page()
