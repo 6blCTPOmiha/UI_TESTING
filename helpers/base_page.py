@@ -105,3 +105,10 @@ class BasePage:
 
     def is_page_has_scroll(self) -> bool:
         return self.driver.execute_script("return document.body.scrollHeight > window.innerHeight;")
+
+
+    def switch_to_frame(self, frame) -> None:
+        self.driver.switch_to.frame(frame)
+
+    def hold_move_release(self, element, target):
+        ActionChains(self.driver).click_and_hold(element).move_to_element(target).release().perform()
