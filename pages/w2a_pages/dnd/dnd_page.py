@@ -22,7 +22,7 @@ class DndPage(BasePage):
 
     @allure.step("Перевести фокус на iframe")
     def focus_on_iframe(self):
-        iframe = self.find_element(Locators.IFRAME)
+        iframe = self.find_element(Locators.IFRAME_DND)
         self.switch_to_frame(iframe)
 
     @allure.step("Перетащить элемент в принимающий")
