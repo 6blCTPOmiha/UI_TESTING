@@ -40,6 +40,8 @@ class Locators:
     ALERT_LOGIN_ERROR = (By.CSS_SELECTOR, '[ng-if="Auth.error"]')
     LOGOUT_HYPERTEXT = (By.XPATH, """//a[contains(text(), "Logout")]""")
 
-    IFRAME = (By.XPATH, '//iframe[@src="droppable/default.html"]')
+    IFRAME_DND = (By.XPATH, '//iframe[@src="droppable/default.html"]')
     DRAGGABLE_ITEM = (By.CSS_SELECTOR, '[id="draggable"]')
     DROPPABLE_ITEM = (By.CSS_SELECTOR, '[id="droppable"]')
+    IFRAME_TABS = (By.XPATH, '//iframe[@src="frames-windows/defult1.html"]')
+    NEW_TAB_HYPERTEXT = (By.XPATH, '//a[contains(text(), "New Browser Tab")]')
