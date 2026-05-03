@@ -112,3 +112,10 @@ class BasePage:
 
     def hold_move_release(self, element, target):
         ActionChains(self.driver).click_and_hold(element).move_to_element(target).release().perform()
+
+    def switch_to_tab(self, index) -> None:
+        tabs = self.driver.window_handles
+        self.driver.switch_to.window(tabs[index])
+
+    def count_tabs(self) -> int:
+        return len(self.driver.window_handles)
