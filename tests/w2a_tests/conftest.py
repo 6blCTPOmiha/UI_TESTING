@@ -7,6 +7,8 @@ from pages.w2a_pages.login.login_checks import LoginChecks
 from pages.w2a_pages.login.login_page import LoginPage
 from pages.w2a_pages.dnd.dnd_page import DndPage
 from pages.w2a_pages.dnd.dnd_checks import DndChecks
+from pages.w2a_pages.tabs.tabs_page import TabsPage
+from pages.w2a_pages.tabs.tabs_checks import TabsChecks
 
 
 @pytest.fixture
@@ -47,3 +49,13 @@ def dnd_page(driver):
 @pytest.fixture
 def dnd_checks(driver):
     return DndChecks(driver)
+
+
+@pytest.fixture
+def tabs_page(driver):
+    return TabsPage(driver)
+
+
+@pytest.fixture
+def tabs_checks(driver):
+    return TabsChecks(driver)
