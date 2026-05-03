@@ -39,3 +39,7 @@ class Locators:
     SUCCESS_LOGIN_TEXT = (By.XPATH, """//p[contains(text(), "You're logged in!!")]""")
     ALERT_LOGIN_ERROR = (By.CSS_SELECTOR, '[ng-if="Auth.error"]')
     LOGOUT_HYPERTEXT = (By.XPATH, """//a[contains(text(), "Logout")]""")
+
+    IFRAME = (By.XPATH, '//iframe[@src="droppable/default.html"]')
+    DRAGGABLE_ITEM = (By.CSS_SELECTOR, '[id="draggable"]')
+    DROPPABLE_ITEM = (By.CSS_SELECTOR, '[id="droppable"]')

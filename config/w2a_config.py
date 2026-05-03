@@ -6,3 +6,4 @@ class Endpoints:
     HOME = "/"
     LOGIN = "/angularjs-protractor/registeration/#/login"
     MEMBERSHIP = "/lifetime-membership-club/"
+    DRAG_N_DROP = "/way2auto_jquery/droppable.php"
