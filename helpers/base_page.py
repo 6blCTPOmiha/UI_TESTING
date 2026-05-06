@@ -125,3 +125,7 @@ class BasePage:
         alert = self.driver.switch_to.alert
         alert.send_keys(text)
         alert.accept()
+
+    def open_with_basic_auth(self, url, login, password) -> None:
+        auth_url = url.replace("https://", f"https://{login}:{password}@")
+        self.driver.get(auth_url)
