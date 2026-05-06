@@ -45,3 +45,7 @@ class Locators:
     DROPPABLE_ITEM = (By.CSS_SELECTOR, '[id="droppable"]')
     IFRAME_TABS = (By.XPATH, '//iframe[@src="frames-windows/defult1.html"]')
     NEW_TAB_HYPERTEXT = (By.XPATH, '//a[contains(text(), "New Browser Tab")]')
+    INPUT_ALERT_BTN = (By.XPATH, '//a[@href="#example-1-tab-2"]')
+    IFRAME_ALERT = (By.XPATH, '//iframe[@src="alert/input-alert.html"]')
+    BUTTON_TO_ALERT = (By.XPATH, '//button[@onclick="myFunction()"]')
+    TEXT_AFTER_ALERT = (By.XPATH, '//p[@id="demo"]')

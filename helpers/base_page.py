@@ -119,3 +119,9 @@ class BasePage:
 
     def count_tabs(self) -> int:
         return len(self.driver.window_handles)
+
+    def fill_alert(self, text) -> None:
+        WebDriverWait(self.driver, 10).until(EC.alert_is_present())
+        alert = self.driver.switch_to.alert
+        alert.send_keys(text)
+        alert.accept()

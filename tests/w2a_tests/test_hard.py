@@ -29,3 +29,17 @@ class TestHard:
         tabs_page.go_to_last_tab()
         tabs_page.click_on_hypertext()
         tabs_checks.check_number_of_tabs(3)
+
+
+    @allure.feature("Alert page")
+    @allure.story("Default functionality")
+    @allure.title("Simple performance test")
+    @allure.severity(allure.severity_level.NORMAL)
+    @pytest.mark.w2av2
+    def test_alert(self, alert_page, alert_checks):
+        alert_page.open_page()
+        alert_page.click_on_input_alert()
+        alert_page.focus_on_iframe()
+        alert_page.trigger_alert()
+        alert_page.fill_alert_with_text()
+        alert_checks.check_text_after_alert()
