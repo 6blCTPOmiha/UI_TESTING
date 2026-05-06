@@ -1,4 +1,7 @@
 import pytest
+
+from pages.w2a_pages.alert.alert_checks import AlertChecks
+from pages.w2a_pages.alert.alert_page import AlertPage
 from pages.w2a_pages.home.home_checks import HomeChecks
 from pages.w2a_pages.home.home_page import HomePage
 from pages.w2a_pages.membership.membership_checks import MembershipChecks
@@ -59,3 +62,13 @@ def tabs_page(driver):
 @pytest.fixture
 def tabs_checks(driver):
     return TabsChecks(driver)
+
+
+@pytest.fixture
+def alert_page(driver):
+    return AlertPage(driver)
+
+
+@pytest.fixture
+def alert_checks(driver):
+    return AlertChecks(driver)
