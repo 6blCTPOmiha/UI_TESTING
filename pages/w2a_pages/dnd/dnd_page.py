@@ -13,16 +13,11 @@ class DndPage(BasePage):
     @allure.step('Открытие страницы')
     def open_page(self):
         self.open(self.url)
-        self.wait_for_paige_load()
-
-    @allure.step('Ожидание загрузки страницы')
-    def wait_for_paige_load(self):
         self.wait_for_url('droppable')
-
 
     @allure.step("Перевести фокус на iframe")
     def focus_on_iframe(self):
-        iframe = self.find_element(Locators.IFRAME)
+        iframe = self.find_element(Locators.IFRAME_DND)
         self.switch_to_frame(iframe)
 
     @allure.step("Перетащить элемент в принимающий")

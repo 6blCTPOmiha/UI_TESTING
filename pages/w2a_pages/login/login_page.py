@@ -13,10 +13,6 @@ class LoginPage(BasePage):
     @allure.step('Открытие страницы')
     def open_page(self):
         self.open(self.url)
-        self.wait_for_paige_load()
-
-    @allure.step('Ожидание загрузки страницы')
-    def wait_for_paige_load(self):
         self.wait_for_url('login')
 
     @allure.step("Ввод username'а")
