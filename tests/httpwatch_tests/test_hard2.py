@@ -9,7 +9,7 @@ class TestHard2:
     @allure.story("Default functionality")
     @allure.title("Simple performance test")
     @allure.severity(allure.severity_level.NORMAL)
-    @pytest.mark.w2av22
+    @pytest.mark.w2av2
     def test_auth(self, authentication_page, authentication_checks):
         authentication_page.open_page()
         authentication_page.scroll_to_the_display_btn()
