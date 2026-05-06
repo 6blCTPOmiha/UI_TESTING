@@ -13,10 +13,6 @@ class TabsPage(BasePage):
     @allure.step('Открытие страницы')
     def open_page(self):
         self.open(self.url)
-        self.wait_for_paige_load()
-
-    @allure.step('Ожидание загрузки страницы')
-    def wait_for_paige_load(self):
         self.wait_for_url('frames-and-windows')
 
     @allure.step("Перевести фокус на iframe")
@@ -29,5 +25,6 @@ class TabsPage(BasePage):
         self.click_element_by_locator(Locators.NEW_TAB_HYPERTEXT)
 
     @allure.step("Перейти на вкладку")
-    def go_to_tab(self, number):
-        self.switch_to_tab(number)
+    def go_to_last_tab(self):
+        last = self.count_tabs() - 1
+        self.switch_to_tab(last)
