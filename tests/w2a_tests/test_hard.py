@@ -26,6 +26,6 @@ class TestHard:
         tabs_page.focus_on_iframe()
         tabs_page.click_on_hypertext()
         tabs_checks.check_number_of_tabs(2)
-        tabs_page.switch_to_tab(1)
+        tabs_page.go_to_last_tab()
         tabs_page.click_on_hypertext()
         tabs_checks.check_number_of_tabs(3)
