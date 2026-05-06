@@ -42,5 +42,4 @@ class TestHard:
         alert_page.focus_on_iframe()
         alert_page.trigger_alert()
         alert_page.fill_alert_with_text()
-        # alert_page.focus_on_iframe()
         alert_checks.check_text_after_alert()
